@@ -1,9 +1,21 @@
 package main
 
-import "fmt"
+import (
+	"fmt"
+)
 
 func afficherEtat(nombres []int, tour int) {
-	fmt.Println("tour", tour, ":", nombres)
+	fmt.Print("tour ", tour, " : [")
+	for k, valeur := range nombres {
+		if k == tour {
+			fmt.Print("| ")
+		}
+		fmt.Print(valeur)
+		if k != len(nombres)-1 {
+			fmt.Print(" ")
+		}
+	}
+	fmt.Println("]")
 }
 
 func triSelection(nombres []int) (int, int) {
