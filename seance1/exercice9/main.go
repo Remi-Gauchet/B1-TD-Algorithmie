@@ -52,7 +52,7 @@ func triBulles(nombres []int) (int, int) {
 }
 
 func main() {
-	original := tranche(5)
+	original := tranche(50)
 	copie1 := make([]int, len(original))
 	copy(copie1, original)
 	comparaison, compteurEchange := triSelection(copie1)

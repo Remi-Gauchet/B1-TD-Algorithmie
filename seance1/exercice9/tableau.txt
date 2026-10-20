@@ -1,0 +1,7 @@
+
+
+n	Sélection : comparaisons	Bulles : comparaisons	Bulles : échanges
+5	    	    10                      12                      3	
+10			    45                      90                      31
+20			    190                     361                     100
+50			    1225                    2156                    653
