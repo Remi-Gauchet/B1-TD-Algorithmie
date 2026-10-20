@@ -213,7 +213,7 @@ Vérifiez trois lignes du tableau avec votre simulateur, en affichant l'état ap
 
 Écrivez une fonction `trierTrois()` qui trie une pile a de trois éléments, quel que soit l'arrangement de départ.
 
-M�thode : comparez `p.a[0]`, `p.a[1]` et `p.a[2]` pour identifier dans quel cas vous êtes, puis appliquez les opérations du tableau.
+M�thode : comparez `p.a[0]`, `p.a[1]` et `p.a[2]` pour identifier dans quel cas vous êtes, puis appliquez les opérations du tableau.
 
 **Vérification** : testez votre fonction sur les six arrangements. Les six doivent aboutir à `[1 2 3]`, et le nombre d'opérations doit correspondre à la dernière colonne du tableau.
 

@@ -92,10 +92,8 @@ func (p *Piles) resoudre() {
 
 // lancement du programme
 func main() {
-	p := Piles{a: []int{3, 2, 1}}
-	p.sa()
-	p.afficher()
-	p.rra()
-	p.afficher()
+	p := Piles{a: []int{42, 7, 19}}
+	p.trierTrois()
 	p.resoudre()
+	p.afficher()
 }

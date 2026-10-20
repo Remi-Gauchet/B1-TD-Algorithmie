@@ -8,3 +8,44 @@ func (p *Piles) aEstTriee() bool {
 	}
 	return true
 }
+
+func (p *Piles) trierTrois() {
+	if p.aEstTriee() == true {
+		return
+	} else {
+		if p.a[0] < p.a[1] { // 1er < 2ème
+			if p.a[1] > p.a[2] { // 1er < 2ème et 2ème > 3ème : 132 ou 231
+				if p.a[0] < p.a[2] {
+					// 132
+					p.sa()
+					p.ra()
+					return
+				}
+				//231
+				p.rra()
+				return
+			}
+		}
+		// 1er > 2ème
+		if p.a[1] < p.a[2] { // 1er > 2ème et 2eme < 3eme : 312 ou 213
+			if p.a[0] < p.a[2] {
+				// 213
+				p.sa()
+				return
+			}
+			// 312
+			p.ra()
+			return
+		}
+
+		if p.a[0] > p.a[2] { // 1er > 3ème
+			// alors ça commence par 3
+			if p.a[1] > p.a[2] { // 2ème > 3ème
+				// 321
+				p.sa()
+				p.rra()
+				return
+			}
+		}
+	}
+}
