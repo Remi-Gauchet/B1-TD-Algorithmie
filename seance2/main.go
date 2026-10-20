@@ -81,8 +81,21 @@ func (p *Piles) afficher() {
 	fmt.Println("a :", p.a, " b :", p.b)
 }
 
+//fonction resoudre
+func (p *Piles) resoudre() {
+	if p.aEstTriee() == true {
+		fmt.Println("opérations :", p.operations)
+	} else {
+		fmt.Println("La pile n'est pas triée.")
+	}
+}
+
 // lancement du programme
 func main() {
-	p := Piles{a: []int{3, 1, 2}}
-	fmt.Println(p.aEstTriee())
+	p := Piles{a: []int{3, 2, 1}}
+	p.sa()
+	p.afficher()
+	p.rra()
+	p.afficher()
+	p.resoudre()
 }
