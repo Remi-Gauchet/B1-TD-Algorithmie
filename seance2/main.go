@@ -83,15 +83,6 @@ func (p *Piles) afficher() {
 
 // lancement du programme
 func main() {
-	p := Piles{a: []int{5, 2, 9, 1, 7}}
-	p.afficher()
-	p.pb()
-	p.afficher()
-	p.ra()
-	p.afficher()
-	p.pa()
-	p.afficher()
-	p.rra()
-	p.afficher()
-	fmt.Println("opérations :", p.operations)
+	p := Piles{a: []int{3, 1, 2}}
+	fmt.Println(p.aEstTriee())
 }
