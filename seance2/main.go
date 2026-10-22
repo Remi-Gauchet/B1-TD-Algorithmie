@@ -95,7 +95,11 @@ func main() {
 	p := Piles{a: []int{5, 2, 9, 1, 7}}
 	for len(p.a) != 0 {
 		for p.a[0] != p.a[p.positionDuMinimum()] {
-			p.ra()
+			if p.positionDuMinimum() < len(p.a) {
+				p.ra()
+			} else {
+				p.rra()
+			}
 		}
 		p.pb()
 	}
