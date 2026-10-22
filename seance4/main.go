@@ -7,7 +7,11 @@ import (
 
 // renvoie une erreur au lieu d'arrêter le programme
 func executer(args []string) error {
-	fmt.Println(len(args), "argument(s) :", args)
+	nombres, err := lireNombres(args)
+	if err != nil {
+		return err
+	}
+	fmt.Println(len(args), "argument(s) :", nombres)
 	return nil
 }
 
