@@ -79,12 +79,13 @@ func (p *Piles) rrb() {
 	p.operations = append(p.operations, "rrb")
 }
 
-// fonction affichage
+// affiche les piles a et b
 func (p *Piles) afficher() {
 	fmt.Println("a :", p.a, " b :", p.b)
 }
 
-// fonction resoudre
+// Si la pile est triée, resoudre dit quelles opérations ont eu lieu.
+// Sinon, il dit qu'elle n'est pas triée
 func (p *Piles) resoudre() {
 	if p.aEstTriee() == true {
 		fmt.Println("opérations :", p.operations)

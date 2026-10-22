@@ -2,6 +2,7 @@ package outils
 
 import "fmt"
 
+// renvoie une erreur s'il y a des doublons dans la liste d'int
 func VerifierDoublons(nombres []int) error {
 	vus := map[int]bool{}
 	for _, nombre := range nombres {
