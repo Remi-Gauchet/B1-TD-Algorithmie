@@ -92,8 +92,17 @@ func (p *Piles) resoudre() {
 
 // lancement du programme
 func main() {
-	p := Piles{a: []int{42, 7, 19}}
-	p.trierTrois()
-	p.resoudre()
+	p := Piles{a: []int{5, 2, 9, 1, 7}}
+	for len(p.a) != 0 {
+		for p.a[0] != p.a[p.positionDuMinimum()] {
+			p.ra()
+		}
+		p.pb()
+	}
+	for len(p.b) != 0 {
+		p.pa()
+	}
 	p.afficher()
+	fmt.Println(p.operations)
+	fmt.Println("Nombre d'opérations :", len(p.operations))
 }
