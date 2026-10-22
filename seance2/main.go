@@ -1,6 +1,9 @@
 package main
 
-import "fmt"
+import (
+	"fmt"
+	"math/rand"
+)
 
 // structure
 type Piles struct {
@@ -9,7 +12,7 @@ type Piles struct {
 	operations []string
 }
 
-//opérations
+// opérations
 func (p *Piles) ra() {
 	if len(p.a) < 2 {
 		return
@@ -81,7 +84,7 @@ func (p *Piles) afficher() {
 	fmt.Println("a :", p.a, " b :", p.b)
 }
 
-//fonction resoudre
+// fonction resoudre
 func (p *Piles) resoudre() {
 	if p.aEstTriee() == true {
 		fmt.Println("opérations :", p.operations)
@@ -92,10 +95,11 @@ func (p *Piles) resoudre() {
 
 // lancement du programme
 func main() {
-	p := Piles{a: []int{5, 2, 9, 1, 7}}
+	var taille int = 10
+	p := Piles{a: rand.Perm(taille)}
 	for len(p.a) != 0 {
 		for p.a[0] != p.a[p.positionDuMinimum()] {
-			if p.positionDuMinimum() < len(p.a) {
+			if p.positionDuMinimum() < (len(p.a) / 2) {
 				p.ra()
 			} else {
 				p.rra()
@@ -107,6 +111,6 @@ func main() {
 		p.pa()
 	}
 	p.afficher()
-	fmt.Println(p.operations)
+	p.resoudre()
 	fmt.Println("Nombre d'opérations :", len(p.operations))
 }
