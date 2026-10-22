@@ -1,4 +1,4 @@
-package main
+package outils
 
 import (
 	"fmt"
@@ -6,7 +6,7 @@ import (
 )
 
 // lireNombre récupère les arguments et les convertir en int
-func lireNombres(args []string) ([]int, error) {
+func LireNombres(args []string) ([]int, error) {
 	var nombres []int
 	for i := range args {
 		valeur, err := strconv.Atoi(args[i])

@@ -3,15 +3,17 @@ package main
 import (
 	"fmt"
 	"os"
+
+	"github.com/Remi-Gauchet/Algorithmie/seance4/outils"
 )
 
 // executer renvoie une erreur au lieu d'arrêter le programme
 func executer(args []string) error {
-	nombres, err := lireNombres(args)
+	nombres, err := outils.LireNombres(args)
 	if err != nil {
 		return err
 	}
-	err = verifierDoublons(nombres)
+	err = outils.VerifierDoublons(nombres)
 	if err != nil {
 		fmt.Fprintln(os.Stderr, err)
 		os.Exit(1)

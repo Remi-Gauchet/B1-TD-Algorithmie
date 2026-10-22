@@ -1,0 +1,7 @@
+Commande	                        Affichage obtenu	                        Code de sortie
+go run main.go 5 2 9 1 7		    5 nombre(s) : [5 2 9 1 7]                   0
+go run main.go		                0 nombre(s) : []                            0
+go run main.go 5 x 1	            Erreur : "x" n'est pas un nombre entier	    exit status 1
+go run main.go 3.5		            Erreur : "3.5" n'est pas un nombre entier   exit status 1
+go run main.go 5 2 5		        le nombre 5 apparaît plusieurs fois         exit status 1
+go run main.go -3 10 0	            3 nombre(s) : [-3 10 0]                     0

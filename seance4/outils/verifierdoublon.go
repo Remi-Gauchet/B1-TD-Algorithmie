@@ -1,8 +1,8 @@
-package main
+package outils
 
 import "fmt"
 
-func verifierDoublons(nombres []int) error {
+func VerifierDoublons(nombres []int) error {
 	vus := map[int]bool{}
 	for _, nombre := range nombres {
 		if vus[nombre] {
