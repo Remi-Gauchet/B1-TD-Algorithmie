@@ -1,5 +1,22 @@
 package main
 
+// trier appelle la fonction tri la plus adaptée à la taille de la pile
+func (p *Piles) trier() {
+	if p.aEstTriee() {
+		return
+	}
+
+	if len(p.a) == 2 {
+		p.sa()
+	} else if len(p.a) == 3 {
+		p.trierTrois()
+	} else if len(p.a) <= 5 {
+		p.trierCinq()
+	} else {
+		return
+	}
+}
+
 // renvoie True si une pile est tirée par ordre croissant
 func (p *Piles) aEstTriee() bool {
 	for i := 0; i < len(p.a)-1; i++ {
@@ -63,5 +80,15 @@ func (p *Piles) amenerAuSommet(position int) {
 		for i := 0; i < len(p.a)-position; i++ {
 			p.rra()
 		}
+	}
+}
+
+func (p *Piles) trierCinq() {
+	for len(p.a) > 1 {
+		p.amenerAuSommet(p.positionDuMinimum())
+		p.pb()
+	}
+	for len(p.b) != 0 {
+		p.pa()
 	}
 }

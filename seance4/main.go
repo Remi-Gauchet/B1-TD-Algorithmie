@@ -40,16 +40,14 @@ func executer(args []string) error {
 	}
 
 	// on commence le tri
-	for len(p.a) > 1 {
-		p.amenerAuSommet(p.positionDuMinimum())
-		p.pb()
-	}
-	for len(p.b) != 0 {
-		p.pa()
-	}
+	p.trier()
+
+	//si le programme tel quel n'arrive pas à trier
 	if p.aEstTriee() == false || len(p.b) > 0 {
 		return fmt.Errorf("impossible de trier la pile")
 	}
+
+	// déclare les opérations effectuées pour le tri
 	for _, op := range p.operations {
 		fmt.Println(op)
 	}
