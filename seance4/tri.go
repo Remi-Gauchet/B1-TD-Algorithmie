@@ -13,7 +13,7 @@ func (p *Piles) trier() {
 	} else if len(p.a) <= 5 {
 		p.trierCinq()
 	} else {
-		return
+		p.trierOptimise()
 	}
 }
 
@@ -83,12 +83,18 @@ func (p *Piles) amenerAuSommet(position int) {
 	}
 }
 
+// trierCinq trie une pile de 5
 func (p *Piles) trierCinq() {
-	for len(p.a) > 1 {
+	for len(p.a) > 3 {
 		p.amenerAuSommet(p.positionDuMinimum())
 		p.pb()
 	}
-	for len(p.b) != 0 {
+	p.trierTrois()
+	for len(p.b) > 0 {
 		p.pa()
 	}
+}
+
+func (p *Piles) trierOptimise() {
+
 }
