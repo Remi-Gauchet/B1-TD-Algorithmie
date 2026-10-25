@@ -96,5 +96,5 @@ func (p *Piles) trierCinq() {
 }
 
 func (p *Piles) trierOptimise() {
-
+	p.trierCinq()
 }

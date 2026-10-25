@@ -33,7 +33,7 @@ func executer(args []string) error {
 		return err
 	}
 
-	p := Piles{a: rangs(nombres)}
+	p := Piles{a: outils.Rangs(nombres)}
 	// une pile déjà triée est renvoyée immédiatement
 	if p.aEstTriee() {
 		return nil

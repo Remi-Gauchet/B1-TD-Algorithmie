@@ -1,6 +1,6 @@
-package main
+package outils
 
-func rangs(nombres []int) []int {
+func Rangs(nombres []int) []int {
 	var resultat []int
 	for i := range nombres {
 		var compteur int
