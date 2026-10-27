@@ -16,6 +16,11 @@ type Piles struct {
 
 // exécute les fonctions et renvoie une erreur
 func executer(args []string) error {
+	if args[0] == "comparer" {
+		comparer()
+		return nil
+	}
+
 	//on lit l'argument
 	nombres, err := outils.LireNombres(args)
 	if err != nil {
