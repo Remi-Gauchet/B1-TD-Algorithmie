@@ -85,17 +85,10 @@ func (p *Piles) trierCinq() {
 	}
 }
 
-// trierOptimise trie avec les bulles
-// pète et fait des bulles
+// trierOptimise trie par sélection
 func (p *Piles) trierOptimise() {
 	for len(p.a) != 0 {
-		for p.a[0] != p.a[p.positionDuMinimum()] {
-			if p.positionDuMinimum() < (len(p.a) / 2) {
-				p.ra()
-			} else {
-				p.rra()
-			}
-		}
+		p.amenerAuSommet(p.positionDuMinimum())
 		p.pb()
 	}
 	for len(p.b) != 0 {

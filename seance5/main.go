@@ -4,7 +4,7 @@ import (
 	"fmt"
 	"os"
 
-	"github.com/Remi-Gauchet/Algorithmie/seance4/outils"
+	"github.com/Remi-Gauchet/Algorithmie/seance5/outils"
 )
 
 // structure
