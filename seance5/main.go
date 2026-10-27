@@ -16,12 +16,6 @@ type Piles struct {
 
 // exécute les fonctions et renvoie une erreur
 func executer(args []string) error {
-	//Fonction test
-	if args[0] == "essai" {
-		essai()
-		return nil
-	}
-
 	//on lit l'argument
 	nombres, err := outils.LireNombres(args)
 	if err != nil {
@@ -54,9 +48,8 @@ func executer(args []string) error {
 	}
 
 	// déclare les opérations effectuées pour le tri
-	for _, op := range p.operations {
-		fmt.Println(op)
-	}
+	fmt.Println("opérations :", p.operations)
+	fmt.Println("nombre d'opérations :", len(p.operations))
 	return nil
 }
 

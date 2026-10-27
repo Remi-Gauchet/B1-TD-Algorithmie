@@ -1,5 +1,9 @@
 package main
 
+import (
+	"github.com/Remi-Gauchet/Algorithmie/seance5/outils"
+)
+
 // trier appelle la fonction tri la plus adaptée à la taille de la pile
 func (p *Piles) trier() {
 	if p.aEstTriee() {
@@ -13,7 +17,7 @@ func (p *Piles) trier() {
 	} else if len(p.a) <= 5 {
 		p.trierCinq()
 	} else {
-		p.trierOptimise()
+		p.trierParBlocs(outils.TailleDeBloc(len(p.a)))
 	}
 }
 
@@ -113,9 +117,17 @@ func (p *Piles) amenerAuSommetB(position int) {
 	}
 }
 
+// remonterLesPlusGrands ramène sur la pile "a" les éléments de la pile "b"
+// en commençant par les plus grands jusqu'aux au plus petits
 func (p *Piles) remonterLesPlusGrands() {
 	for len(p.b) > 0 {
 		p.amenerAuSommetB(p.positionDuMaximumB())
 		p.pa()
 	}
+}
+
+// trierParBlocs trie a en deux phases : pousser par blocs, puis remonter.
+func (p *Piles) trierParBlocs(tailleBloc int) {
+	p.pousserParBlocs(tailleBloc)
+	p.remonterLesPlusGrands()
 }
