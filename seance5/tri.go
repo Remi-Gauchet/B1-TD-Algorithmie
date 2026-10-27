@@ -69,20 +69,6 @@ func (p *Piles) trierTrois() {
 	}
 }
 
-// amenerAuSommet fait remonter l'élément de a en position donnée,
-// par le chemin le plus court.
-func (p *Piles) amenerAuSommet(position int) {
-	if position < len(p.a)/2 {
-		for i := 0; i < position; i++ {
-			p.ra()
-		}
-	} else {
-		for i := 0; i < len(p.a)-position; i++ {
-			p.rra()
-		}
-	}
-}
-
 // trierCinq trie une pile de 5
 func (p *Piles) trierCinq() {
 	for len(p.a) > 3 {
@@ -97,4 +83,39 @@ func (p *Piles) trierCinq() {
 
 func (p *Piles) trierOptimise() {
 	p.trierCinq()
+}
+
+// amenerAuSommet fait remonter l'élément de la pile "a" à l'index "position",
+// par le chemin le plus court
+func (p *Piles) amenerAuSommet(position int) {
+	if position < len(p.a)/2 {
+		for i := 0; i < position; i++ {
+			p.ra()
+		}
+	} else {
+		for i := 0; i < len(p.a)-position; i++ {
+			p.rra()
+		}
+	}
+}
+
+// amenerAuSommetB fair remonter l'élément de la pile "b" à l'index "position",
+// par le chemin le plus court
+func (p *Piles) amenerAuSommetB(position int) {
+	if position < len(p.b)/2 {
+		for i := 0; i < position; i++ {
+			p.rb()
+		}
+	} else {
+		for i := 0; i < len(p.b)-position; i++ {
+			p.rrb()
+		}
+	}
+}
+
+func (p *Piles) remonterLesPlusGrands() {
+	for len(p.b) > 0 {
+		p.amenerAuSommetB(p.positionDuMaximumB())
+		p.pa()
+	}
 }
