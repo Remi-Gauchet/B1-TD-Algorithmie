@@ -16,6 +16,11 @@ type Piles struct {
 
 // exécute les fonctions et renvoie une erreur
 func executer(args []string) error {
+	if len(os.Args) < 2 {
+		return nil
+	}
+
+	//appel de la fonction comparer
 	if args[0] == "comparer" {
 		comparer()
 		return nil
