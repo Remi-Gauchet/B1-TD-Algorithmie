@@ -16,6 +16,8 @@ func (p *Piles) trier() {
 		p.trierTrois()
 	} else if len(p.a) <= 5 {
 		p.trierCinq()
+	} else if len(p.a) < 20 {
+		p.trierOptimise()
 	} else {
 		p.trierParBlocs(outils.TailleDeBloc(len(p.a)))
 	}
